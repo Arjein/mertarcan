@@ -1,0 +1,89 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "BNB Horizon",
+      "description": "A sophisticated deep learning system for cryptocurrency price prediction, specifically focused on Binance Coin (BNB). The project combines advanced time series analysis with real-time market data to provide price forecasts at 5-minute intervals.",
+      "technologies": ["Python","PyTorch", "Pandas", "Hugging Face Transformers", "PostgreSQL", "Flask", "React", "Node.js"],
+      "github": "https://github.com/Arjein/BNB-Horizon",
+      "category": "Time-Series Forecasting",
+      "coverImage": "/images/bnb-horizon.jpg",
+      "details": [
+        "Fine-tuned IBM's Granite-TimeSeries-TTM-R2 deep learning model for precise BNB price forecasting",
+        "Implemented a robust data pipeline for processing and analyzing 5-minute interval kline data",
+        "Designed and optimized PostgreSQL database schema for efficient storage of historical data and predictions",
+        "Developed a Flask REST API with comprehensive error handling and rate limiting",
+        "Created CI/CD pipelines for automated model deployment and system updates",
+        "Built an interactive React dashboard for real-time price visualization and model performance tracking"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "OASIS Alzheimer Classifier",
+      "description": "An innovative deep learning solution for early-stage Alzheimer's disease detection using brain MRI scans. The system employs a lightweight CNN architecture to provide rapid and accurate classification of disease stages, assisting medical professionals in early diagnosis.",
+      "technologies": ["Python", "PyTorch", "OpenCV", "TensorFlow"],
+      "github": "https://github.com/Arjein/OASIS-Alzheimer-Classifier",
+      "category": "Image Classification",
+      "coverImage": "/images/oasis-alzheimer.png",
+      "details": [
+        "Architected and implemented a custom TinyVGG CNN with 23k parameters from scratch",
+        "Processed and analyzed 86k OASIS MRI samples for 4-class disease stage classification",
+        "Achieved 96% accuracy through optimized model architecture and training pipeline",
+        "Implemented weighted loss functions to address class imbalance in the dataset",
+        "Developed data augmentation techniques to enhance model robustness",
+        "Achieved balanced F1-score of 96% across all disease stages"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "SatNet: Skeletal Attention Network",
+      "description": "A cutting-edge reinforcement learning system for articulated robot control, combining Graph Attention Networks (GAT) with Beta distribution for precise and reliable motion planning. The project focuses on improving sample efficiency and robustness in continuous control tasks.",
+      "technologies": ["Python", "PyTorch", "Gymnasium", "Stable-baselines3", "Pandas", "Numpy"],
+      "github": "https://github.com/Arjein/SatNet",
+      "category": "Continous Control Tasks",
+      "coverImage": "/images/satnet.png",
+      "details": [
+        "Designed and implemented a novel GAT-based architecture for robot control",
+        "Integrated Beta distribution for improved action space exploration",
+        "Developed custom attention mechanisms for better spatial understanding",
+        "Implemented efficient sampling strategies for enhanced learning speed",
+        "Created comprehensive testing framework for control stability",
+        "Achieved significant improvements in sample efficiency and task completion rates"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Amazon Reviews Sentiment Analysis",
+      "description": "A comprehensive sentiment analysis system for Amazon product reviews, processing millions of customer feedback entries to provide actionable insights for businesses. The project demonstrates advanced NLP techniques and efficient data processing at scale.",
+      "technologies": ["Python", "NLTK", "Scikit-learn", "Pandas"],
+      "github": "https://github.com/Arjein/Amazon-Reviews-Sentiment-Analysis",
+      "category": "NLP",
+      "coverImage": "/images/amazon_logo.png",
+      "details": [
+        "Developed and optimized a Logistic Regression model for sentiment classification",
+        "Processed and analyzed 3.6M Amazon reviews with balanced class distribution",
+        "Achieved 92% accuracy through advanced feature engineering techniques",
+        "Implemented efficient text preprocessing pipeline for large-scale data",
+        "Created comprehensive documentation and methodology guide",
+        "Published detailed analysis and findings in a Medium article"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Shakespeare-GPT",
+      "description": "An innovative language model project that recreates Shakespeare's writing style using a custom Transformer architecture. The project demonstrates deep understanding of transformer models and efficient training techniques for creative text generation.",
+      "technologies": ["Python", "PyTorch", "Transformers", "Hugging Face"],
+      "github": "https://github.com/Arjein/Shakespeare-GPT",
+      "category": "NLP",
+      "coverImage": "/images/shakespeare-gpt.png",
+      "details": [
+        "Architected and implemented a custom NanoGPT model with 9M parameters",
+        "Developed specialized character-based tokenization for Shakespearean text",
+        "Optimized training pipeline for efficient convergence on limited hardware",
+        "Implemented custom batching strategies for improved training efficiency",
+        "Created evaluation metrics for style matching accuracy",
+        "Achieved high-quality text generation with authentic Shakespearean style"
+      ]
+    }
+  ]
+} 

@@ -1,0 +1,30 @@
+{
+  "experiences": [
+    {
+      "id": "1",
+      "company": "FDNsoft",
+      "title": "Mobile Application Developer Intern",
+      "period": "June 2022 - July 2022",
+      "description": "Led the development of a secure mobile application with real-time data synchronization capabilities, focusing on user experience and security.",
+      "achievements": [
+        "Developed a secure authentication system and real-time data synchronization using Flutter and Firebase",
+        "Implemented responsive UI components following Material Design guidelines",
+        "Collaborated with UI/UX designers to create an intuitive user experience"
+      ],
+      "technologies": ["Flutter", "Dart", "Firebase", "UI/UX"]
+    },
+    {
+      "id": "2",
+      "company": "SOLUS",
+      "title": "Systems Engineer Intern",
+      "period": "August 2021 - September 2021",
+      "description": "Focused on system optimization and security implementation for web servers, improving performance and monitoring capabilities.",
+      "achievements": [
+        "Optimized server performance and implemented security measures for Nginx web servers",
+        "Developed automated deployment scripts for WordPress installations",
+        "Enhanced system monitoring and logging capabilities"
+      ],
+      "technologies": ["Linux", "Nginx", "WordPress", "DevOps"]
+    }
+  ]
+} 

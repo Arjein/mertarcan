@@ -8,14 +8,21 @@ export default function FeaturedProjects() {
   const projects = DataService.getFeaturedProjects();
   const { scrollY } = useScroll();
   
-  // Parallax effect for the section
-  const y = useTransform(scrollY, [300, 800], [50, 0]);
-  const opacity = useTransform(scrollY, [300, 500], [0, 1]);
+  // This line transforms scroll position into vertical movement
+  const y = useTransform(scrollY, [0, 800], [0, -25]);
+  // When user scrolls from 0 to 800 pixels, the element moves from 0 to -25 pixels
+  // Smaller range (-25 instead of -100) means gentler movement on mobile
+
+  // This line controls fade-in effect based on scroll position
+  const opacity = useTransform(scrollY, [300, 600], [0, 1]);
+  // Element starts invisible (0) at 300px scroll
+  // Becomes fully visible (1) at 600px scroll
+  // Creates smooth fade-in effect as user scrolls
 
   return (
     <motion.section 
       style={{ y, opacity }}
-      className="relative py-32 bg-gradient-to-b from-surface/90 via-surface/90 to-surface/50 backdrop-blur-xl"
+      className="relative py-16 sm:py-32 mt-16 sm:mt-0 bg-gradient-to-b from-surface/90 via-surface/90 to-surface/50 backdrop-blur-xl"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -45,7 +52,7 @@ export default function FeaturedProjects() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 auto-rows-fr"
         >
           {projects.map((project, index) => (
             <motion.div
@@ -54,13 +61,13 @@ export default function FeaturedProjects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative"
+              className="group relative h-full"
             >
               <div className="absolute -inset-x-4 -inset-y-4 z-0 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
               
-              <div className="relative z-10 bg-surface/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-on-surface/10 hover:shadow-xl transition-all duration-300">
+              <div className="relative z-10 bg-surface/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-on-surface/10 hover:shadow-xl transition-all duration-300 h-full flex flex-col">
                 {/* Image Section */}
-                <div className="relative aspect-video overflow-hidden">
+                <div className="relative aspect-video overflow-hidden flex-shrink-0">
                   <Image
                     src={project.coverImage}
                     alt={project.title}
@@ -72,14 +79,14 @@ export default function FeaturedProjects() {
                 </div>
 
                 {/* Content Section */}
-                <div className="p-8">
+                <div className="p-8 flex flex-col flex-grow">
                   {/* Title Section */}
                   <h3 className="text-2xl font-bold mb-4 text-gradient">
                     {project.title}
                   </h3>
 
                   {/* Description Section */}
-                  <p className="text-on-surface/70 text-lg leading-relaxed mb-6">
+                  <p className="text-on-surface/70 text-lg leading-relaxed mb-6 flex-grow">
                     {project.description}
                   </p>
 
@@ -125,4 +132,4 @@ export default function FeaturedProjects() {
       </div>
     </motion.section>
   );
-} 
+}

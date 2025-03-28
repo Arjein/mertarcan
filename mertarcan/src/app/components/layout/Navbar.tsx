@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, useScroll, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 
@@ -25,11 +26,11 @@ export default function Navbar() {
 
   return (
     <>
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
+      <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled ? 'bg-surface/60 backdrop-blur-xl border-b border-on-surface/5' : 'bg-transparent'
+          isScrolled 
+            ? 'bg-gradient-to-b from-surface/80 to-surface/40 backdrop-blur-lg after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-gradient-to-r after:from-transparent after:via-primary/5 after:to-transparent' 
+            : 'bg-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,16 +39,22 @@ export default function Navbar() {
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              className="flex-shrink-0"
             >
               <Link href="/" className="flex items-center">
-                <motion.span 
-                  className="text-2xl font-bold text-gradient"
+                <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  MA
-                </motion.span>
+                  <Image
+                    src="/images/web_logo.png"
+                    alt="Website Logo"
+                    width={150}
+                    height={10}
+                    className="w-auto h-8 md:h-10"
+                  />
+                </motion.div>
               </Link>
             </motion.div>
 
@@ -69,14 +76,20 @@ export default function Navbar() {
                           : 'text-on-surface/70 hover:text-on-surface'
                       }`}
                     >
-                      <span className="relative z-10">{item.name}</span>
                       {pathname === item.href && (
                         <motion.div
-                          layoutId="navbar-indicator"
-                          className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full"
-                          transition={{ type: "spring", bounce: 0.15, duration: 0.5 }}
+                          className="absolute inset-0 -z-10 bg-gradient-to-r from-primary to-secondary rounded-full"
+                          initial={{ scale: 0.9, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          transition={{ 
+                            type: "spring",
+                            stiffness: 500,
+                            damping: 30,
+                            duration: 0.2 
+                          }}
                         />
                       )}
+                      {item.name}
                     </Link>
                   </motion.div>
                 ))}
@@ -121,7 +134,7 @@ export default function Navbar() {
             </motion.button>
           </div>
         </div>
-      </motion.nav>
+      </nav>
 
       {/* Mobile Navigation Menu */}
       <AnimatePresence>

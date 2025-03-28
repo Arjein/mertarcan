@@ -5,7 +5,7 @@
       "company": "FDNsoft",
       "title": "Mobile Application Developer Intern",
       "period": "June 2022 - July 2022",
-      "description": "Led the development of a secure mobile application with real-time data synchronization capabilities, focusing on user experience and security.",
+      "description": "",
       "achievements": [
         "Developed a secure authentication system and real-time data synchronization using Flutter and Firebase",
         "Implemented responsive UI components following Material Design guidelines",
@@ -18,7 +18,7 @@
       "company": "SOLUS",
       "title": "Systems Engineer Intern",
       "period": "August 2021 - September 2021",
-      "description": "Focused on system optimization and security implementation for web servers, improving performance and monitoring capabilities.",
+      "description": "",
       "achievements": [
         "Optimized server performance and implemented security measures for Nginx web servers",
         "Developed automated deployment scripts for WordPress installations",

@@ -79,7 +79,7 @@ export default function ProjectsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-8xl md:text-9xl font-bold mb-8 tracking-tight text-gradient"
+              className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold mb-8 tracking-tight text-gradient px-4 sm:px-0"
             >
               Projects
             </motion.h1>
@@ -88,7 +88,7 @@ export default function ProjectsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-2xl md:text-3xl text-on-surface/70 max-w-3xl mx-auto leading-relaxed"
+              className="text-xl sm:text-2xl md:text-3xl text-on-surface/70 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0"
             >
               A collection of my work in AI, machine learning, and technology.
             </motion.p>
@@ -149,7 +149,7 @@ export default function ProjectsPage() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.2 }}
-                    className="p-16 md:w-3/5 order-2 md:order-1"
+                    className="p-6 sm:p-8 md:p-16 md:w-3/5 order-2 md:order-1"
                   >
                     <div className="flex items-center gap-4 mb-6">
                       <span className="text-sm font-medium text-primary tracking-wide">
@@ -251,4 +251,4 @@ export default function ProjectsPage() {
       </motion.section>
     </main>
   );
-} 
+}

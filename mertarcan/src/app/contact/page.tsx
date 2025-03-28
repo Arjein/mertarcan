@@ -50,17 +50,17 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-20"
+            className="text-center mb-12 sm:mb-20"
           >
-            <h1 className="text-6xl font-semibold mb-6 tracking-tight text-gradient">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold mb-6 tracking-tight text-gradient px-4 sm:px-0">
               Let's Connect
             </h1>
-            <p className="text-xl text-on-surface/70 max-w-2xl mx-auto font-light leading-relaxed">
+            <p className="text-lg sm:text-xl text-on-surface/70 max-w-2xl mx-auto font-light leading-relaxed px-4 sm:px-0">
               Have a project in mind? I'd love to hear about it.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6">
             {/* Contact Information */}
             <motion.div 
               initial={{ opacity: 0, x: -20 }}

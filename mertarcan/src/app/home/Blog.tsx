@@ -9,9 +9,9 @@ export default function Blog() {
   const featuredArticles = DataService.getFeaturedArticles();
   const { scrollY } = useScroll();
   
-  // Parallax effect for the section
-  const y = useTransform(scrollY, [600, 1100], [50, 0]);
-  const opacity = useTransform(scrollY, [600, 800], [0, 1]);
+  // Adjusted parallax effect for smoother transitions
+  const y = useTransform(scrollY, [0, 800], [0, -50]);
+  const opacity = useTransform(scrollY, [400, 600], [0, 1]);
 
   return (
     <motion.section 
@@ -59,7 +59,12 @@ export default function Blog() {
             >
               <div className="absolute -inset-x-4 -inset-y-4 z-0 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
               
-              <div className="relative z-10 bg-surface/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-on-surface/10 hover:shadow-xl transition-all duration-300">
+              <Link 
+                href={article.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block relative z-10 bg-surface/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-on-surface/10 hover:shadow-xl transition-all duration-300"
+              >
                 <div className="relative h-64 overflow-hidden">
                   <Image
                     src={article.coverImage}
@@ -79,37 +84,28 @@ export default function Blog() {
                       {article.readTime} min read
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">
-                    <Link 
-                      href={article.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-gradient hover:from-primary hover:to-secondary transition-all duration-300"
-                    >
-                      {article.title}
-                    </Link>
+                  <h3 className="text-2xl font-bold mb-4 text-gradient hover:from-primary hover:to-secondary transition-all duration-300">
+                    {article.title}
                   </h3>
                   <p className="text-on-surface/70 text-lg leading-relaxed mb-6">
                     {article.description}
                   </p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="relative w-10 h-10 rounded-full overflow-hidden ring-2 ring-primary/20">
-                        <Image
-                          src={article.authorImage}
-                          alt={article.author}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <span className="text-sm font-medium text-on-surface">{article.author}</span>
+                  <div className="flex items-center gap-3">
+                    <div className="relative w-10 h-10 rounded-full overflow-hidden ring-2 ring-primary/20">
+                      <Image
+                        src={article.authorImage}
+                        alt={article.author}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
-                    <span className="text-sm text-on-surface/50">
+                    <span className="text-sm font-medium text-on-surface">{article.author}</span>
+                    <span className="text-sm text-on-surface/50 ml-auto">
                       {article.date}
                     </span>
                   </div>
                 </div>
-              </div>
+              </Link>
             </motion.article>
           ))}
         </motion.div>
@@ -139,4 +135,4 @@ export default function Blog() {
       </div>
     </motion.section>
   );
-} 
+}

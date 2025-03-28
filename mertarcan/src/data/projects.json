@@ -7,7 +7,7 @@
       "technologies": ["Python","PyTorch", "Pandas", "Hugging Face Transformers", "PostgreSQL", "Flask", "React", "Node.js"],
       "github": "https://github.com/Arjein/BNB-Horizon",
       "category": "Time-Series Forecasting",
-      "coverImage": "/images/bnb-horizon.jpg",
+      "coverImage": "/images/coin-horizon.png",
       "details": [
         "Fine-tuned IBM's Granite-TimeSeries-TTM-R2 deep learning model for precise BNB price forecasting",
         "Implemented a robust data pipeline for processing and analyzing 5-minute interval kline data",

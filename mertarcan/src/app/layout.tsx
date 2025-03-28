@@ -5,15 +5,15 @@ import Navbar from "@/app/components/layout/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Mert Arcan",
-  description: "AI Engineer & Machine Learning Enthusiast",
-};
+export const metadata = {
+  title: 'Mert Arcan',
+  description: 'Personal portfolio website',
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en" className="dark">
@@ -22,5 +22,5 @@ export default function RootLayout({
         {children}
       </body>
     </html>
-  );
+  )
 }

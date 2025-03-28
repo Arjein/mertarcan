@@ -168,6 +168,11 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="relative w-full h-[250px] sm:h-[300px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-primary/20"
               >
+                <Link 
+                  href={`/projects#project-${currentProject.id}`}
+                  className="absolute inset-0 z-10 cursor-pointer"
+                  aria-label={`View ${currentProject.title} project details`}
+                />
                 <div className="absolute inset-0">
                   <div 
                     className={`absolute inset-0 transition-all duration-700 ease-in-out ${
@@ -201,7 +206,10 @@ export default function Hero() {
                   {projects.map((_, index) => (
                     <button
                       key={index}
-                      onClick={() => handleSlideChange(index)}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleSlideChange(index);
+                      }}
                       className={`w-2 h-2 rounded-full transition-all duration-300 ${
                         index === currentProjectIndex
                           ? 'bg-primary w-4'
@@ -218,7 +226,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-row flex-wrap gap-2 justify-center lg:justify-start mb-6"
+              className="flex flex-row flex-wrap gap-2 justify-center lg:justify-start mb-6"
             >
               <Link
                 href="/projects"
@@ -307,8 +315,13 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
+            <Link 
+              href={`/projects#project-${currentProject.id}`}
+              className="absolute inset-0 z-10 cursor-pointer"
+              aria-label={`View ${currentProject.title} project details`}
+            />
             <div className="absolute inset-0">
-              <div 
+              <div  
                 className={`absolute inset-0 transition-all duration-700 ease-in-out ${
                   isTransitioning 
                     ? 'opacity-0 -translate-x-full' 
@@ -340,7 +353,10 @@ export default function Hero() {
               {projects.map((_, index) => (
                 <button
                   key={index}
-                  onClick={() => handleSlideChange(index)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSlideChange(index);
+                  }}
                   className={`w-2 h-2 rounded-full transition-all duration-300 ${
                     index === currentProjectIndex
                       ? 'bg-primary w-4'

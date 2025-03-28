@@ -125,7 +125,7 @@ export default function ProjectsPage() {
         whileInView="show"
         viewport={{ once: true, margin: "-100px" }}
         variants={container}
-        className="max-w-[2000px] mx-auto px-8 py-32"
+        className="max-w-[2000px] mx-auto px-8 py-4"
       >
         <motion.div 
           style={{ y, opacity }}
@@ -136,8 +136,9 @@ export default function ProjectsPage() {
           {projects.map((project, index) => (
             <motion.div 
               key={project.id}
+              id={`project-${project.id}`}
               variants={item}
-              className="group relative"
+              className="group relative scroll-mt-32"
             >
               <div className="absolute -inset-x-4 -inset-y-4 z-0 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
               
@@ -206,11 +207,10 @@ export default function ProjectsPage() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.2 + 0.8 }}
+                      className="relative z-20"
                     >
-                      <Link 
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <button 
+                        onClick={() => window.open(project.github, '_blank', 'noopener,noreferrer')}
                         className="inline-flex items-center text-primary hover:text-primary/80 text-lg font-medium transition-all duration-300 hover:scale-105"
                       >
                         View on GitHub
@@ -222,7 +222,7 @@ export default function ProjectsPage() {
                         >
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
-                      </Link>
+                      </button>
                     </motion.div>
                   </motion.div>
 

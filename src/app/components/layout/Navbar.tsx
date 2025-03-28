@@ -50,9 +50,9 @@ export default function Navbar() {
                   <Image
                     src="/images/web_logo.png"
                     alt="Website Logo"
-                    width={150}
+                    width={5000}
                     height={10}
-                    className="w-auto h-8 md:h-10"
+                    className="w-auto h-4 md:h-6"
                   />
                 </motion.div>
               </Link>

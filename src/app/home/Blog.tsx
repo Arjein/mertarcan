@@ -110,28 +110,7 @@ export default function Blog() {
           ))}
         </motion.div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mt-20"
-        >
-          <Link 
-            href="/blog"
-            className="btn-outlined-primary"
-          >
-            View All Articles
-            <svg 
-              className="w-5 h-5 ml-2" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </Link>
-        </motion.div>
+       
       </div>
     </motion.section>
   );

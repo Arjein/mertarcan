@@ -3,6 +3,7 @@
 import { DataService } from '@/services/dataService';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function FeaturedProjects() {
   const projects = DataService.getFeaturedProjects();
@@ -42,9 +43,7 @@ export default function FeaturedProjects() {
           <h2 className="text-5xl md:text-6xl font-bold mb-8 tracking-tight text-gradient">
             Featured Projects
           </h2>
-          <p className="text-2xl text-on-surface/70 max-w-2xl mx-auto leading-relaxed">
-            A collection of my recent work in machine learning and artificial intelligence
-          </p>
+          
         </motion.div>
 
         <motion.div
@@ -55,78 +54,88 @@ export default function FeaturedProjects() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 auto-rows-fr"
         >
           {projects.map((project, index) => (
-            <motion.div
+            <Link 
+              href={`/projects#project-${project.id}`} 
               key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative h-full"
+              className="block h-full group"
             >
-              <div className="absolute -inset-x-4 -inset-y-4 z-0 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
-              
-              <div className="relative z-10 bg-surface/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-on-surface/10 hover:shadow-xl transition-all duration-300 h-full flex flex-col">
-                {/* Image Section */}
-                <div className="relative aspect-video overflow-hidden flex-shrink-0">
-                  <Image
-                    src={project.coverImage}
-                    alt={project.title}
-                    fill
-                    className="object-cover transform group-hover:scale-105 transition-transform duration-700"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </div>
-
-                {/* Content Section */}
-                <div className="p-8 flex flex-col flex-grow">
-                  {/* Title Section */}
-                  <h3 className="text-2xl font-bold mb-4 text-gradient">
-                    {project.title}
-                  </h3>
-
-                  {/* Description Section */}
-                  <p className="text-on-surface/70 text-lg leading-relaxed mb-6 flex-grow">
-                    {project.description}
-                  </p>
-
-                  {/* Technologies Section */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium transition-all duration-300 hover:bg-primary/20 hover:scale-105"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="relative h-full"
+              >
+                <div className="absolute -inset-x-4 -inset-y-4 z-0 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
+                
+                <div className="relative z-10 bg-surface/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-on-surface/10 hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+                  {/* Image Section */}
+                  <div className="relative aspect-video overflow-hidden flex-shrink-0">
+                    <Image
+                      src={project.coverImage}
+                      alt={project.title}
+                      fill
+                      className="object-cover transform group-hover:scale-105 transition-transform duration-700"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
 
-                  {/* GitHub Link */}
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-primary hover:text-primary/80 transition-all duration-300 hover:scale-105 text-lg font-medium"
-                  >
-                    View on GitHub
-                    <svg
-                      className="w-5 h-5 ml-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                  {/* Content Section */}
+                  <div className="p-8 flex flex-col flex-grow">
+                    {/* Title Section */}
+                    <h3 className="text-2xl font-bold mb-4 text-gradient">
+                      {project.title}
+                    </h3>
+
+                    {/* Description Section */}
+                    <p className="text-on-surface/70 text-lg leading-relaxed mb-6 flex-grow">
+                      {project.description}
+                    </p>
+
+                    {/* Technologies Section */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium transition-all duration-300 hover:bg-primary/20 hover:scale-105"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* GitHub Link - Prevent navigation to projects page */}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation(); // Stop event from bubbling up to Link
+                        e.preventDefault(); // Prevent default behavior
+                        window.open(project.github, '_blank', 'noopener,noreferrer');
+                        return false; // Additional safety to prevent navigation
+                      }}
+                      className="inline-flex items-center text-primary hover:text-primary/80 transition-all duration-300 hover:scale-105 text-lg font-medium relative z-30"
+                      onMouseDown={(e) => e.stopPropagation()} // Stop mouseDown events too
+                      onTouchStart={(e) => e.stopPropagation()} // Handle touch events
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
-                  </a>
+                      View on GitHub
+                      <svg
+                        className="w-5 h-5 ml-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        />
+                      </svg>
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </Link>
           ))}
         </motion.div>
       </div>

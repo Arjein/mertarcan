@@ -29,13 +29,13 @@ export default function Experience() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
 
   return (
     <section ref={sectionRef} className="py-32 relative overflow-hidden">
       <motion.div 
         style={{ y, opacity }}
-        className="absolute inset-0 bg-gradient-to-b from-surface via-surface/50 to-surface"
+        className="absolute inset-0 bg-gradient-to-b from-surface/60 via-surface/30 to-surface/60"
       />
       
       <motion.div
@@ -57,18 +57,21 @@ export default function Experience() {
             <motion.div
               key={experience.id}
               variants={item}
-              className="relative"
+              className="relative group"
             >
-              <div className="absolute -inset-x-4 -inset-y-4 z-0 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
+              <div
+                className="absolute inset-0 z-0 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{ willChange: 'opacity', transform: 'translateZ(0)' }}
+              />
               
-              <div className="relative z-10 bg-surface/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-on-surface/10">
+              <div className="relative z-10 bg-surface/60 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-on-surface/20">
                 <div className="p-8">
                   <div className="flex items-center gap-4 mb-6">
                     <span className="text-sm font-medium text-primary tracking-wide">
                       {experience.period}
                     </span>
                   </div>
-                  <h3 className="text-3xl font-bold mb-4 text-on-surface">
+                  <h3 className="text-3xl font-bold mb-4 text-gradient">
                     {experience.title}
                   </h3>
                   <p className="text-xl text-on-surface/70 mb-6">
@@ -108,4 +111,4 @@ export default function Experience() {
       </motion.div>
     </section>
   );
-} 
+}

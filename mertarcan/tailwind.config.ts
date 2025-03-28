@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -9,26 +9,12 @@ const config: Config = {
   darkMode: 'class',
   theme: {
     extend: {
+      backgroundImage: {
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
       colors: {
-        primary: 'rgb(var(--primary) / <alpha-value>)',
-        secondary: 'rgb(var(--secondary) / <alpha-value>)',
-        surface: 'rgb(var(--surface) / <alpha-value>)',
-        'on-surface': 'rgb(var(--on-surface) / <alpha-value>)',
-        'on-primary': 'rgb(var(--on-primary) / <alpha-value>)',
-        'on-secondary': 'rgb(var(--on-secondary) / <alpha-value>)',
-        dark: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
-          950: '#020617',
-        },
         accent: {
           50: '#f0fdf4',
           100: '#dcfce7',
@@ -42,13 +28,40 @@ const config: Config = {
           900: '#14532d',
           950: '#052e16',
         },
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        ai: {
+          background: '#121212',
+          card: '#1E1E1E',
+          border: '#333333',
+          textPrimary: '#E6E6E6',
+          textSecondary: '#9E9E9E',
+          cyan: '#00E5FF',
+          purple: '#BB86FC',
+          mutedBlue: '#64748B',
+          mutedMagenta: '#CF6679',
+        },
+        dark: {
+          50: '#f8fafc',
+          100: '#f1f5f9',
+          200: '#e2e8f0',
+          300: '#cbd5e1',
+          400: '#94a3b8',
+          500: '#64748b',
+          600: '#475569',
+          700: '#334155',
+          800: '#1e293b',
+          900: '#0f172a',
+          950: '#020617',
+        },
+        'on-primary': 'rgb(0 0 0 / <alpha-value>)',
+        'on-secondary': 'rgb(0 0 0 / <alpha-value>)',
+        'on-surface': 'rgb(255 255 255 / <alpha-value>)',
+        primary: 'rgb(0 229 255 / <alpha-value>)',
+        secondary: 'rgb(187 134 252 / <alpha-value>)',
+        surface: 'rgb(18 18 18 / <alpha-value>)',
       },
     },
   },
   plugins: [],
-}
-export default config 
+};
+
+export default config;

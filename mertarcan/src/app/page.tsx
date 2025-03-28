@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <main className="min-h-screen bg-gradient-to-b from-surface via-surface/50 to-surface">
       <Hero />
       
       <motion.div

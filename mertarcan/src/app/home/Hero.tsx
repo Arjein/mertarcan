@@ -17,7 +17,7 @@ export default function Hero() {
 
   // Parallax effect for the hero section
   const y = useTransform(scrollY, [0, 500], [0, 100]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const opacity = useTransform(scrollY, [0, 600], [1, 0]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -273,17 +273,8 @@ export default function Hero() {
                   }`}
                 >
                   <h3 className="text-3xl font-bold mb-3">{currentProject.title}</h3>
-                  <p className="text-lg opacity-90 mb-4">{currentProject.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {currentProject.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-4 py-1.5 bg-primary/10 backdrop-blur-sm rounded-full text-sm font-medium text-primary"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                  
+                  
                 </div>
               </div>
             </div>

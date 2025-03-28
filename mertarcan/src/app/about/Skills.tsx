@@ -13,7 +13,7 @@ export default function Skills() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
 
   const skills = DataService.getSkills();
 
@@ -21,7 +21,7 @@ export default function Skills() {
     <section ref={sectionRef} className="py-32 relative overflow-hidden">
       <motion.div 
         style={{ y, opacity }}
-        className="absolute inset-0 bg-gradient-to-b from-surface via-surface/50 to-surface"
+        className="absolute inset-0 bg-gradient-to-b from-surface/60 via-surface/30 to-surface/60"
       />
       
       <motion.div
@@ -43,11 +43,11 @@ export default function Skills() {
             <motion.div
               key={category.category}
               variants={item}
-              className="relative"
+              className="relative group"
             >
               <div className="absolute -inset-x-4 -inset-y-4 z-0 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
               
-              <div className="relative z-10 bg-surface/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-on-surface/10">
+              <div className="relative z-10 bg-surface/60 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-on-surface/20">
                 <div className="p-8">
                   <div className="flex items-center gap-4 mb-6">
                     <span className="text-2xl">{category.icon}</span>

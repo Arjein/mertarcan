@@ -6,6 +6,7 @@
       "description": "A sophisticated deep learning system for cryptocurrency price prediction, specifically focused on Binance Coin (BNB). The project combines advanced time series analysis with real-time market data to provide price forecasts at 5-minute intervals.",
       "technologies": ["Python","PyTorch", "Pandas", "Hugging Face Transformers", "PostgreSQL", "Flask", "React", "Node.js"],
       "github": "https://github.com/Arjein/BNB-Horizon",
+      "demo": "https://coin-predictor-app.vercel.app/",
       "category": "Time-Series Forecasting",
       "coverImage": "/images/coin-horizon.png",
       "details": [
@@ -24,7 +25,7 @@
       "technologies": ["Python", "PyTorch", "OpenCV", "TensorFlow"],
       "github": "https://github.com/Arjein/OASIS-Alzheimer-Classifier",
       "category": "Image Classification",
-      "coverImage": "/images/oasis-alzheimer.png",
+      "coverImage": "/images/oasis-alzheimer_org.png",
       "details": [
         "Architected and implemented a custom TinyVGG CNN with 23k parameters from scratch",
         "Processed and analyzed 86k OASIS MRI samples for 4-class disease stage classification",
@@ -86,4 +87,4 @@
       ]
     }
   ]
-} 
+}

@@ -69,16 +69,26 @@ export default function FeaturedProjects() {
                 <div className="absolute -inset-x-4 -inset-y-4 z-0 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
                 
                 <div className="relative z-10 bg-surface/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-on-surface/10 hover:shadow-xl transition-all duration-300 h-full flex flex-col">
-                  {/* Image Section */}
-                  <div className="relative aspect-video overflow-hidden flex-shrink-0">
-                    <Image
-                      src={project.coverImage}
-                      alt={project.title}
-                      fill
-                      className="object-cover transform group-hover:scale-105 transition-transform duration-700"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  {/* Image Section - Modified with shorter height */}
+                  <div className="relative aspect-[4/3] overflow-hidden flex-shrink-0 bg-surface p-6">
+                    <div className="relative w-full h-full overflow-hidden rounded-lg">
+                      <Image
+                        src={project.coverImage}
+                        alt={project.title}
+                        fill
+                        className={`transition-transform duration-700 ${
+                          // Special handling for different image types
+                          project.coverImage.includes('coin-horizon')
+                            ? 'object-contain p-2' // Use contain and add inner padding for logos/icons
+                            : 'object-cover group-hover:scale-105' // Use cover for regular images with hover effect
+                        }`}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                      {/* Optional overlay - only show for regular images */}
+                      {!project.coverImage.includes('coin-horizon') && (
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      )}
+                    </div>
                   </div>
 
                   {/* Content Section */}

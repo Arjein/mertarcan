@@ -1,4 +1,4 @@
-import { Project, Article, SocialLink } from '@/types';
+import { Article, SocialLink } from '@/types';
 import projectsData from '@/data/projects.json';
 import articlesData from '@/data/articles.json';
 import socialLinksData from '@/data/social-links.json';
@@ -48,6 +48,18 @@ export interface Education {
   courses?: string[];
 }
 
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  technologies: string[];
+  github: string;
+  demo?: string; // Added optional demo property
+  category: string;
+  coverImage: string;
+  details: string[];
+}
+
 export class DataService {
   private static projects: Project[] = projectsData.projects;
   private static articles: Article[] = articlesData.articles;
@@ -95,4 +107,4 @@ export class DataService {
   static getEducation(): Education[] {
     return this.education;
   }
-} 
+}

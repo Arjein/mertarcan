@@ -173,9 +173,9 @@ export default function Hero() {
                   className="absolute inset-0 z-10 cursor-pointer"
                   aria-label={`View ${currentProject.title} project details`}
                 />
-                <div className="absolute inset-0">
+                <div className="absolute inset-0 bg-surface p-4">
                   <div 
-                    className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                    className={`absolute inset-0 transition-all duration-700 ease-in-out rounded-lg overflow-hidden ${
                       isTransitioning 
                         ? 'opacity-0 -translate-x-full' 
                         : 'opacity-100 translate-x-0'
@@ -185,7 +185,11 @@ export default function Hero() {
                       src={currentProject.coverImage}
                       alt={currentProject.title}
                       fill
-                      className="object-cover"
+                      className={`transition-transform duration-700 ${
+                        currentProject.coverImage.includes('coin-horizon') || currentProject.coverImage.includes('oasis-alzheimer')
+                          ? 'object-contain p-2' 
+                          : 'object-cover'
+                      }`}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
                       priority
                     />
@@ -320,9 +324,9 @@ export default function Hero() {
               className="absolute inset-0 z-10 cursor-pointer"
               aria-label={`View ${currentProject.title} project details`}
             />
-            <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-surface p-4">
               <div  
-                className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                className={`absolute inset-0 transition-all duration-700 ease-in-out rounded-lg overflow-hidden ${
                   isTransitioning 
                     ? 'opacity-0 -translate-x-full' 
                     : 'opacity-100 translate-x-0'
@@ -332,7 +336,11 @@ export default function Hero() {
                   src={currentProject.coverImage}
                   alt={currentProject.title}
                   fill
-                  className="object-cover"
+                  className={`transition-transform duration-700 ${
+                    currentProject.coverImage.includes('coin-horizon')
+                      ? 'object-contain p-2' 
+                      : 'object-cover'
+                  }`}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
                   priority
                 />

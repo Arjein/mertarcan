@@ -207,7 +207,7 @@ export default function ProjectsPage() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.2 + 0.8 }}
-                      className="relative z-20"
+                      className="relative z-20 flex flex-wrap gap-4"
                     >
                       <button 
                         onClick={() => window.open(project.github, '_blank', 'noopener,noreferrer')}
@@ -223,6 +223,24 @@ export default function ProjectsPage() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
                       </button>
+                      
+                      {project.demo && (
+                        <button 
+                          onClick={() => window.open(project.demo, '_blank', 'noopener,noreferrer')}
+                          className="inline-flex items-center bg-primary text-on-primary hover:bg-primary/90 px-6 py-2 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105"
+                        >
+                          Live Demo
+                          <svg 
+                            className="w-5 h-5 ml-2" 
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                          </svg>
+                        </button>
+                      )}
                     </motion.div>
                   </motion.div>
 
@@ -232,16 +250,23 @@ export default function ProjectsPage() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.2 + 0.2 }}
-                    className="relative w-full md:w-2/5 h-[500px] md:h-auto order-1 md:order-2"
+                    className="relative w-full md:w-2/5 h-[500px] md:h-auto order-1 md:order-2 bg-surface p-4"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-surface/50 to-transparent z-10" />
-                    <Image
-                      src={project.coverImage}
-                      alt={project.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      priority
-                    />
+                    <div className="relative w-full h-full overflow-hidden rounded-lg">
+                      <div className="absolute inset-0 bg-gradient-to-r from-surface/50 to-transparent z-10" />
+                      <Image
+                        src={project.coverImage}
+                        alt={project.title}
+                        fill
+                        className={`${
+                          // Special handling for different image types
+                          project.coverImage.includes('coin-horizon') || project.coverImage.includes('oasis-alzheimer')
+                            ? 'object-contain p-2' // Use contain for logos/diagrams
+                            : 'object-cover transition-transform duration-700 group-hover:scale-105' // Use cover with hover effect for photos
+                        }`}
+                        priority
+                      />
+                    </div>
                   </motion.div>
                 </div>
               </div>

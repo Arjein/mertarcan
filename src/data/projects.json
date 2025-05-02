@@ -2,11 +2,27 @@
   "projects": [
     {
       "id": 1,
+      "title": "CLARA AI",
+      "description": "Clara AI is your AI-powered executive assistant for email. It leverages advanced language models to triage, classify, and draft responses to emails, integrating seamlessly with Gmail. ",
+      "technologies": ["Python", "Langchain","Langgraph", "Gmail API", "Azure OpenAI", "Azure CosmosDB"],
+      "github": "https://github.com/Arjein/clara-ai",
+      "category": "AI Agent",
+      "coverImage": "/images/clara-ai.png",
+      "details": [
+        "Developed an agent-based AI assistant that automates Gmail triage and response drafting using LLMs and workflow orchestration.",
+        "Engineered agent workflows with LangChain and LangGraph for context-aware, multi-step email automation.",
+        "Integrated OAuth2, Gmail API, and Azure CosmosDB for secure, persistent, and seamless user experience.",
+        "Built a CLI for real-time status and user interaction."
+      ]
+    },
+    
+    {
+      "id": 2,
       "title": "BNB Horizon",
       "description": "A sophisticated deep learning system for cryptocurrency price prediction, specifically focused on Binance Coin (BNB). The project combines advanced time series analysis with real-time market data to provide price forecasts at 5-minute intervals.",
       "technologies": ["Python","PyTorch", "Pandas", "Hugging Face Transformers", "PostgreSQL", "Flask", "React", "Node.js"],
       "github": "https://github.com/Arjein/BNB-Horizon",
-      "demo": "https://coin-predictor-app.vercel.app/",
+      
       "category": "Time-Series Forecasting",
       "coverImage": "/images/coin-horizon.png",
       "details": [
@@ -14,12 +30,11 @@
         "Implemented a robust data pipeline for processing and analyzing 5-minute interval kline data",
         "Designed and optimized PostgreSQL database schema for efficient storage of historical data and predictions",
         "Developed a Flask REST API with comprehensive error handling and rate limiting",
-        "Created CI/CD pipelines for automated model deployment and system updates",
-        "Built an interactive React dashboard for real-time price visualization and model performance tracking"
+        "Created CI/CD pipelines for automated model deployment and system updates"
       ]
     },
     {
-      "id": 2,
+      "id": 3,
       "title": "OASIS Alzheimer Classifier",
       "description": "An innovative deep learning solution for early-stage Alzheimer's disease detection using brain MRI scans. The system employs a lightweight CNN architecture to provide rapid and accurate classification of disease stages, assisting medical professionals in early diagnosis.",
       "technologies": ["Python", "PyTorch", "OpenCV", "TensorFlow"],
@@ -36,7 +51,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": 4,
       "title": "SatNet: Skeletal Attention Network",
       "description": "A cutting-edge reinforcement learning system for articulated robot control, combining Graph Attention Networks (GAT) with Beta distribution for precise and reliable motion planning. The project focuses on improving sample efficiency and robustness in continuous control tasks.",
       "technologies": ["Python", "PyTorch", "Gymnasium", "Stable-baselines3", "Pandas", "Numpy"],
@@ -53,7 +68,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": 5,
       "title": "Amazon Reviews Sentiment Analysis",
       "description": "A comprehensive sentiment analysis system for Amazon product reviews, processing millions of customer feedback entries to provide actionable insights for businesses. The project demonstrates advanced NLP techniques and efficient data processing at scale.",
       "technologies": ["Python", "NLTK", "Scikit-learn", "Pandas"],
@@ -70,7 +85,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": 6,
       "title": "Shakespeare-GPT",
       "description": "An innovative language model project that recreates Shakespeare's writing style using a custom Transformer architecture. The project demonstrates deep understanding of transformer models and efficient training techniques for creative text generation.",
       "technologies": ["Python", "PyTorch", "Transformers", "Hugging Face"],

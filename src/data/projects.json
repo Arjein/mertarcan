@@ -2,6 +2,24 @@
   "projects": [
     {
       "id": 1,
+      "title": "Kaggie",
+      "description": "Kaggie is an AI-powered Chrome extension that serves as your intelligent Kaggle competition assistant. It leverages multi-agent LangGraph systems with adaptive RAG to provide personalized strategies, insights, and guidance directly within your browser while competing in machine learning challenges.",
+      "technologies": ["Python", "Langchain","Langgraph", "FastAPI", "Pinecone", "OpenAI API", "React", "TypeScript"],
+      "github": "https://github.com/Arjein/kaggie",
+      "category": "AI Agent",
+      "coverImage": "/images/kaggie.png",
+      "details": [
+        "Built Chrome extension with LangGraph multi-agent system using OpenAI API and adaptive RAG pipeline.",
+        "Automated Kaggle scraper with Playwright and spaCy NLP, deployed via GitHub Actions every 4 hours.",
+        "Engineered Pinecone vector database with semantic chunking and Firestore filtering for qualified discussions.",
+        "Designed adaptive RAG evaluation system with LLM scoring and intelligent retry/fallback strategies.",
+        "Built FastAPI backend with vector search and competition data retrieval endpoints.",
+        "Created React TypeScript frontend with Chrome storage persistence and real-time streaming responses.",
+        "Built conversation summarization with summarization agent optimizing long conversations."
+      ]
+    },
+    {
+      "id": 2,
       "title": "CLARA AI",
       "description": "Clara AI is your AI-powered executive assistant for email. It leverages advanced language models to triage, classify, and draft responses to emails, integrating seamlessly with Gmail. ",
       "technologies": ["Python", "Langchain","Langgraph", "Gmail API", "Azure OpenAI", "Azure CosmosDB"],
@@ -17,7 +35,7 @@
     },
     
     {
-      "id": 2,
+      "id": 3,
       "title": "BNB Horizon",
       "description": "A sophisticated deep learning system for cryptocurrency price prediction, specifically focused on Binance Coin (BNB). The project combines advanced time series analysis with real-time market data to provide price forecasts at 5-minute intervals.",
       "technologies": ["Python","PyTorch", "Pandas", "Hugging Face Transformers", "PostgreSQL", "Flask", "React", "Node.js"],
@@ -34,7 +52,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": 4,
       "title": "OASIS Alzheimer Classifier",
       "description": "An innovative deep learning solution for early-stage Alzheimer's disease detection using brain MRI scans. The system employs a lightweight CNN architecture to provide rapid and accurate classification of disease stages, assisting medical professionals in early diagnosis.",
       "technologies": ["Python", "PyTorch", "OpenCV", "TensorFlow"],
@@ -51,7 +69,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": 5,
       "title": "SatNet: Skeletal Attention Network",
       "description": "A cutting-edge reinforcement learning system for articulated robot control, combining Graph Attention Networks (GAT) with Beta distribution for precise and reliable motion planning. The project focuses on improving sample efficiency and robustness in continuous control tasks.",
       "technologies": ["Python", "PyTorch", "Gymnasium", "Stable-baselines3", "Pandas", "Numpy"],
@@ -68,7 +86,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": 6,
       "title": "Amazon Reviews Sentiment Analysis",
       "description": "A comprehensive sentiment analysis system for Amazon product reviews, processing millions of customer feedback entries to provide actionable insights for businesses. The project demonstrates advanced NLP techniques and efficient data processing at scale.",
       "technologies": ["Python", "NLTK", "Scikit-learn", "Pandas"],
@@ -85,7 +103,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": 7,
       "title": "Shakespeare-GPT",
       "description": "An innovative language model project that recreates Shakespeare's writing style using a custom Transformer architecture. The project demonstrates deep understanding of transformer models and efficient training techniques for creative text generation.",
       "technologies": ["Python", "PyTorch", "Transformers", "Hugging Face"],

@@ -337,7 +337,7 @@ export default function Hero() {
                   alt={currentProject.title}
                   fill
                   className={`transition-transform duration-700 ${
-                    currentProject.coverImage.includes('coin-horizon')
+                    currentProject.coverImage.includes('coin-horizon') || currentProject.coverImage.includes('clara-ai') || currentProject.coverImage.includes('kaggie')
                       ? 'object-contain p-2' 
                       : 'object-cover'
                   }`}

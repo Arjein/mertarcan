@@ -11,7 +11,7 @@
         { "name": "Time Series Analysis", "level": 85 },
         { "name": "Hugging Face", "level": 85 },
         { "name": "Langchain", "level": 80 },
-        { "name": "Langgraph", "level": 80 },
+        { "name": "Langgraph", "level": 80 }
       ]
     },
     {
